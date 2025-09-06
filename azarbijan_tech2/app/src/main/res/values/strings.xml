@@ -1,3 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">azarbijan_tech</string>
+    <string name="app_name">Screen Time Tracker</string>
+    <string name="timer_format">Timer: %1$s</string>
+    <string name="usage_stats_format">Usage Stats: %1$s</string>
 </resources>
+

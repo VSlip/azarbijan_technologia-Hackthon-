@@ -3,15 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/pieChart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp" />
+<!--    <com.github.mikephil.charting.charts.PieChart-->
+<!--        android:id="@+id/pieChart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="300dp" />-->
 
-    <com.github.mikephil.charting.charts.HorizontalBarChart
-        android:id="@+id/barChart"
+<!--    <com.github.mikephil.charting.charts.HorizontalBarChart-->
+<!--        android:id="@+id/barChart"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="400dp"-->
+<!--        android:layout_marginTop="16dp"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/btnOpenStats"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="View Detailed Stats"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="24dp" />-->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="16dp"/>
-
+        android:layout_height="match_parent" />
 </LinearLayout>
