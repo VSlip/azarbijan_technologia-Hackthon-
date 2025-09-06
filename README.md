@@ -13,6 +13,16 @@
 ## How It Works
 Track Baijan operates as a lightweight service on each of your devices. It continuously monitors active application usage and screen activity in the background. This data is then securely transmitted to a central database, where it is processed and compiled into the final, detailed reports accessible through the main application dashboard.
 
+
+##Future Enhancements
+
+Main Goal: Addition of an API to collect sleep monitoring data, exercise data from your Wear OS Smartwatch, and categorize it into Productivity and Non-Productivity.
+
+Usage Trends: Analyze long-term trends to identify patterns and make more informed decisions about your digital well-being.
+
+Web Dashboard: Access your data and manage your account from any web browser.
+
+
 ## Getting Started
 To get started with the project, clone the repository and follow the setup instructions for each platform:
 
