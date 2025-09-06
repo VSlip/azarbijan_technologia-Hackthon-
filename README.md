@@ -16,11 +16,11 @@ Track Baijan operates as a lightweight service on each of your devices. It conti
 
 ##Future Enhancements
 
-Main Goal: Addition of an API to collect sleep monitoring data, exercise data from your Wear OS Smartwatch, and categorize it into Productivity and Non-Productivity.
+-**Main Goal:** Addition of an API to collect sleep monitoring data, exercise data from your Wear OS Smartwatch, and categorize it into Productivity and Non-Productivity.
 
-Usage Trends: Analyze long-term trends to identify patterns and make more informed decisions about your digital well-being.
+-**Usage Trends:** Analyze long-term trends to identify patterns and make more informed decisions about your digital well-being.
 
-Web Dashboard: Access your data and manage your account from any web browser.
+-**Web Dashboard:** Access your data and manage your account from any web browser.
 
 
 ## Getting Started
