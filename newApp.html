@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen Time Logs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        #refreshBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #refreshBtn:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>📊 Screen Time Logs</h1>
+    <button id="refreshBtn">🔄 Refresh Data</button>
+    <table id="logsTable">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>App Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Device Type</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        const BASE_URL = "http://localhost:3000"; // 🔹 Replace with your live Pinggy URL
+
+
+        async function fetchLogs() {
+                    const res = await fetch(`${BASE_URL}`);
+        console.log(await res.text());
+            try {
+                const url = new URL(`${BASE_URL}/logs`);
+                const res = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                if (!res.ok) throw new Error(`HTTP error! Status: ${res.status}`);
+                const data = await res.json();
+                renderTable(data);
+            } catch (err) {
+                console.error("Error fetching logs:", err);
+                alert("Failed to fetch logs. Check console for details.");
+            }
+        }
+
+        function renderTable(logs) {
+            const tbody = document.querySelector("#logsTable tbody");
+            tbody.innerHTML = "";
+            logs.forEach(log => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+          <td>${log.user_id}</td>
+          <td>${log.app_name}</td>
+          <td>${new Date(log.start_time * 1000).toLocaleString()}</td>
+          <td>${new Date(log.end_time * 1000).toLocaleString()}</td>
+          <td>${log.device_type}</td>
+          <td>${new Date(log.created_at).toLocaleString()}</td>
+        `;
+                tbody.appendChild(row);
+            });
+        }
+
+        document.getElementById("refreshBtn").addEventListener("click", fetchLogs);
+
+        // Fetch logs on page load
+        fetchLogs();
+    </script>
+</body>
+
+</html>
